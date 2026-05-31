@@ -531,6 +531,46 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3) {
     transition: 0.5s;
 }
 
+#form button:hover,
+.botao-p:hover {
+    scale: 1.02;
+    background-color: #029ed6;
+}
+
+#form {
+    color: white;
+}
+
+#form button {
+    background-color: var(--primary-color);
+}
+
+.flow input,
+.flow textarea {
+    background-color: var(--bg-color);
+    color: white;
+    width: 100%;
+    padding: 12px 24px;
+    margin-bottom: 16px;
+    border: solid 1.5px #025c7d;
+    border-radius: 8px;
+    font-family: "Michroma", sans-serif;
+    font-size: 16px;
+    resize: none;
+}
+
+textarea:focus,
+input:focus,
+select:focus {
+    box-shadow: 0 0 0 0;
+    border: 1.5px solid #025c7d;
+    outline: 0;
+}
+
+.flow label {
+    width: 100px;
+}
+
 .flow {
     display: flex;
     flex-direction: column;
