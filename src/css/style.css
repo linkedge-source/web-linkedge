@@ -57,6 +57,7 @@ nav a:hover {
 }
 
 main {
+    background-color: var(--bg-color);
     position: relative;
 }
 
@@ -92,7 +93,8 @@ main {
     -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
     display: flex;
-    align-items: center;
+    align-items: start;
+    padding-top: 8rem;
     max-height: 0;
     overflow: hidden;
     transition: var(--transition);
@@ -113,6 +115,15 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3) {
 }
 
 .menu-items {
+    padding-inline: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-top: 32px;
+}
+
+.menu-items-alt {
+    margin-left: 4rem;
     padding-inline: 32px;
     display: flex;
     flex-direction: column;
@@ -490,6 +501,36 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3) {
     color: white;
 }
 
+#quiz-menu,
+#quiz-principal {
+    color: white;
+    background: var(--bg-color);
+}
+
+#quiz-principal {
+    display: none;
+    background-color: var(--bg-color);
+    animation: fade-in 1s ease-in-out forwards;
+}
+
+#quiz-principal h1 {
+    margin: 20px;
+}
+
+.botao-p {
+    margin-top: 3rem;
+    width: 25%;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-family: "Michroma", sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
 .flow {
     display: flex;
     flex-direction: column;
@@ -510,9 +551,25 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3) {
         transform var(--transition);
 }
 
+.flow button {
+    background-color: var(--bg-color);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.flow button h2 {
+    margin-bottom: 0;
+}
+
 .flow-item:hover {
     background-color: var(--secondary-color);
     transform: translateX(8px);
+}
+
+#formulario:hover {
+    background-color: var(--bg-alt-color);
+    transform: none;
 }
 
 .flow-num {
@@ -598,4 +655,14 @@ footer {
 .footer-bottom p {
     font-size: 13px;
     color: rgba(255, 255, 255, 0.3);
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
