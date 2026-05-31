@@ -1,9 +1,516 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-BR">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title></title>
+        <title>LinkEdge - Rede Mesh</title>
+        <link rel="icon" href="./src/assets/imgs/logo.png" />
+        <link rel="stylesheet" href="./src/css/styles.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Michroma&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            src="https://kit.fontawesome.com/b522bdfe69.js"
+            crossorigin="anonymous"
+        ></script>
     </head>
-    <body></body>
+
+    <body>
+        <main>
+            <header class="navbar">
+                <nav>
+                    <h1>
+                        <span style="color: var(--primary-color)">Link</span
+                        >Edge
+                    </h1>
+                    <label for="menu-toggle" class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+                </nav>
+            </header>
+
+            <div id="home" class="container">
+                <div class="hero">
+                    <h1>O espaço como ponte de emergência</h1>
+                    <p>
+                        Rede mesh satelital que conecta regiões isoladas quando
+                        a infraestrutura terrestre falha.
+                    </p>
+                    <div class="buttons">
+                        <a id="conheca" href="#problema">
+                            <span>conheça o projeto</span>
+                        </a>
+                        <a id="aplicacao" href="#sec-aplicacao">
+                            <span>ver aplicação</span>
+                        </a>
+                    </div>
+                </div>
+
+                <img
+                    id="satelite"
+                    src="./src/assets/imgs/satelite.png"
+                    alt="Modelo 3D de um satélite artificial. O corpo principal é retangular e revestido por uma manta dourada reflexiva, com dois grandes painéis solares azuis estendidos nas laterais, uma antena parabólica cinza no topo e um componente verde na lateral."
+                />
+
+                <input type="checkbox" id="menu-toggle" />
+
+                <div class="menu">
+                    <div class="menu-items">
+                        <a class="menu-item" href="#problema">
+                            <h1>01</h1>
+                            <h1 style="font-size: 50px">Problema</h1>
+                        </a>
+                        <a class="menu-item" href="#tecnologia">
+                            <h1>02</h1>
+                            <h1 style="font-size: 50px">Tecnologia</h1>
+                        </a>
+                        <a class="menu-item" href="#objetivos">
+                            <h1>03</h1>
+                            <h1 style="font-size: 50px">Objetivos</h1>
+                        </a>
+                        <a class="menu-item" href="#publico">
+                            <h1>04</h1>
+                            <h1 style="font-size: 50px">Público-alvo</h1>
+                        </a>
+                        <a class="menu-item" href="#beneficios">
+                            <h1>05</h1>
+                            <h1 style="font-size: 50px">Benefícios</h1>
+                        </a>
+                        <a class="menu-item" href="#sec-aplicacao">
+                            <h1>06</h1>
+                            <h1 style="font-size: 50px">Aplicação</h1>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <section id="problema" class="container">
+                <div class="banner">
+                    <div class="banner-item">
+                        <h1>4 Bilhões</h1>
+                        <p>sem internet confiável</p>
+                    </div>
+                    <div class="banner-item">
+                        <h1>6.000+</h1>
+                        <p>satélites em órbita hoje</p>
+                    </div>
+                    <div class="banner-item">
+                        <h1>&lt; 30S</h1>
+                        <p>alerta via LinkEdge</p>
+                    </div>
+                    <div class="banner-item">
+                        <h1>US$ 1 TRI</h1>
+                        <p>economia espacial 2030</p>
+                    </div>
+                </div>
+
+                <div class="conteudo-problema">
+                    <div class="problema-header">
+                        <div style="text-align: center; opacity: 30%">
+                            <h1 style="font-size: 128px">01</h1>
+                            <h1 style="font-size: 36px">Problema</h1>
+                        </div>
+                        <h1 style="text-transform: uppercase">
+                            Quando o
+                            <span style="color: var(--primary-color)"
+                                >desastre</span
+                            >
+                            chega, o
+                            <span style="color: var(--primary-color)"
+                                >sinal</span
+                            >
+                            vai embora.
+                        </h1>
+                    </div>
+
+                    <div class="cards">
+                        <div class="card">
+                            <p
+                                style="
+                                    color: var(--primary-color);
+                                    font-size: 96px;
+                                "
+                            >
+                                -
+                            </p>
+                            <p>
+                                Em enchentes, deslizamentos e incêndios, as
+                                redes terrestres colapsam. Regiões remotas ficam
+                                isoladas quando mais precisam de comunicação.
+                            </p>
+                        </div>
+                        <div class="card">
+                            <p
+                                style="
+                                    color: var(--primary-color);
+                                    font-size: 96px;
+                                "
+                            >
+                                -
+                            </p>
+                            <p>
+                                Centenas de municípios brasileiros não têm
+                                cobertura de internet. A falta de dados em tempo
+                                real custa vidas e atrasa respostas de
+                                emergência.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="tecnologia" class="container container--alt">
+                <div class="conteudo">
+                    <div class="problema-header">
+                        <div style="text-align: center; opacity: 30%">
+                            <h1 style="font-size: 128px">02</h1>
+                            <h1 style="font-size: 36px">Tecnologia</h1>
+                        </div>
+                        <h1 style="text-transform: uppercase">
+                            Três camadas que não dependem
+                            <span style="color: var(--primary-color)"
+                                >de torres.</span
+                            >
+                        </h1>
+                    </div>
+                    <div class="tech-grid">
+                        <div class="tech-card">
+                            <div class="tech-card__icon">
+                                <i class="fa-solid fa-satellite"></i>
+                            </div>
+                            <h2>Satélite LEO</h2>
+                            <p>
+                                Starlink e OneWeb em órbita baixa com cobertura
+                                global e latência de 20–40ms.
+                            </p>
+                        </div>
+                        <div class="tech-card">
+                            <div class="tech-card__icon">
+                                <i class="fa-solid fa-network-wired"></i>
+                            </div>
+                            <h2>Rede Mesh</h2>
+                            <p>
+                                Nós IoT se comunicam entre si. Se um cair, os
+                                dados são roteados pelo nó vizinho.
+                            </p>
+                        </div>
+                        <div class="tech-card">
+                            <div class="tech-card__icon">
+                                <i class="fa-solid fa-microchip"></i>
+                            </div>
+                            <h2>Arduino + Sensores</h2>
+                            <p>
+                                Hardware acessível com sensores de temperatura,
+                                umidade, nível de água e GPS.
+                            </p>
+                        </div>
+                        <div class="tech-card">
+                            <div class="tech-card__icon">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+                            <h2>Python + Trigonometria</h2>
+                            <p>
+                                Algoritmo calcula o ângulo de elevação para
+                                escolher o nó com melhor visada satelital.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="objetivos" class="container">
+                <div class="conteudo">
+                    <div class="problema-header">
+                        <div style="text-align: center; opacity: 30%">
+                            <h1 style="font-size: 128px">03</h1>
+                            <h1 style="font-size: 36px">Objetivos</h1>
+                        </div>
+                        <h1 style="text-transform: uppercase">
+                            Metas claras,
+                            <span style="color: var(--primary-color)"
+                                >impacto mensurável.</span
+                            >
+                        </h1>
+                    </div>
+                    <div class="goal-list">
+                        <div class="goal-item">
+                            <span class="goal-num">01</span>
+                            <div class="goal-text">
+                                <h2>Alerta em menos de 30 segundos</h2>
+                                <p>
+                                    Da detecção pelo sensor até a notificação na
+                                    central de comando.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="goal-item">
+                            <span class="goal-num">02</span>
+                            <div class="goal-text">
+                                <h2>Custo abaixo de R$ 500 por nó</h2>
+                                <p>
+                                    Hardware acessível para implantação em
+                                    escala por municípios e ONGs.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="goal-item">
+                            <span class="goal-num">03</span>
+                            <div class="goal-text">
+                                <h2>Cobertura de 95% do território</h2>
+                                <p>
+                                    Constelações LEO combinadas com rede mesh
+                                    local de baixo custo.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="goal-item">
+                            <span class="goal-num">04</span>
+                            <div class="goal-text">
+                                <h2>Dados abertos para prevenção futura</h2>
+                                <p>
+                                    Histórico de leituras exportável para
+                                    modelos preditivos de risco climático.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="publico" class="container container--alt">
+                <div class="conteudo">
+                    <div class="problema-header">
+                        <div style="text-align: center; opacity: 30%">
+                            <h1 style="font-size: 128px">04</h1>
+                            <h1 style="font-size: 36px">Público</h1>
+                        </div>
+                        <h1 style="text-transform: uppercase">
+                            Quem se beneficia
+                            <span style="color: var(--primary-color)"
+                                >diretamente.</span
+                            >
+                        </h1>
+                    </div>
+                    <div class="cards">
+                        <div class="card card--pub">
+                            <div class="card-pub__icon">
+                                <i
+                                    class="fa-solid fa-shield-halved fa-2xl"
+                                    style="color: var(--primary-color)"
+                                ></i>
+                            </div>
+                            <h2>Defesa Civil</h2>
+                            <p>
+                                Alertas automáticos e coordenação de resgates
+                                com dados em tempo real de campo.
+                            </p>
+                        </div>
+                        <div class="card card--pub">
+                            <div class="card-pub__icon">
+                                <i
+                                    class="fa-solid fa-truck-medical fa-2xl"
+                                    style="color: var(--primary-color)"
+                                ></i>
+                            </div>
+                            <h2>Bombeiros e SAMU</h2>
+                            <p>
+                                Localização precisa de vítimas em áreas sem
+                                cobertura de celular ou rádio.
+                            </p>
+                        </div>
+                        <div class="card card--pub">
+                            <div class="card-pub__icon">
+                                <i
+                                    class="fa-solid fa-house-flood-water fa-2xl"
+                                    style="color: var(--primary-color)"
+                                ></i>
+                            </div>
+                            <h2>Comunidades Ribeirinhas</h2>
+                            <p>
+                                Alertas antecipados de enchentes com tempo hábil
+                                para evacuação segura.
+                            </p>
+                        </div>
+                        <div class="card card--pub">
+                            <div class="card-pub__icon">
+                                <i
+                                    class="fa-solid fa-tractor fa-2xl"
+                                    style="color: var(--primary-color)"
+                                ></i>
+                            </div>
+                            <h2>Municípios Rurais</h2>
+                            <p>
+                                Infraestrutura de comunicação sem necessidade de
+                                torres ou cabos terrestres.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="beneficios" class="container">
+                <div class="conteudo">
+                    <div class="problema-header">
+                        <div style="text-align: center; opacity: 30%">
+                            <h1 style="font-size: 128px">05</h1>
+                            <h1 style="font-size: 36px">Benefícios</h1>
+                        </div>
+                        <h1 style="text-transform: uppercase">
+                            O que muda com o
+                            <span style="color: var(--primary-color)"
+                                >LinkEdge.</span
+                            >
+                        </h1>
+                    </div>
+                    <div class="benefit-list">
+                        <div class="benefit-item">
+                            <i class="fa-solid fa-bolt benefit-icon"></i>
+                            <div>
+                                <h2>Sem dependência de energia elétrica</h2>
+                                <p>
+                                    Nós alimentados por bateria ou painel solar
+                                    funcionam em blackouts prolongados.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fa-solid fa-bell benefit-icon"></i>
+                            <div>
+                                <h2>Alertas 100% automáticos</h2>
+                                <p>
+                                    Nenhuma intervenção humana necessária — o
+                                    sensor detecta e o sistema notifica.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fa-solid fa-database benefit-icon"></i>
+                            <div>
+                                <h2>Dados para prevenção futura</h2>
+                                <p>
+                                    Histórico de leituras alimenta modelos de
+                                    risco climático e decisões públicas.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <i
+                                class="fa-solid fa-arrow-trend-up benefit-icon"
+                            ></i>
+                            <div>
+                                <h2>Escalável e acessível</h2>
+                                <p>
+                                    Cada novo nó aumenta a cobertura sem custo
+                                    de infraestrutura adicional.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="sec-aplicacao" class="container container--alt">
+                <div class="conteudo">
+                    <div class="problema-header">
+                        <div style="text-align: center; opacity: 30%">
+                            <h1 style="font-size: 128px">06</h1>
+                            <h1 style="font-size: 36px">Aplicação</h1>
+                        </div>
+                        <h1 style="text-transform: uppercase">
+                            Da detecção ao resgate em
+                            <span style="color: var(--primary-color)"
+                                >30 segundos.</span
+                            >
+                        </h1>
+                    </div>
+                    <div class="flow">
+                        <div class="flow-item">
+                            <div class="flow-num">01</div>
+                            <div class="flow-connector">
+                                <div class="flow-line"></div>
+                            </div>
+                            <div class="flow-content">
+                                <h2>Sensor detecta anomalia</h2>
+                                <p>
+                                    Nível de água sobe acima do limiar crítico
+                                    em rio próximo a uma comunidade.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flow-item">
+                            <div class="flow-num">02</div>
+                            <div class="flow-connector">
+                                <div class="flow-line"></div>
+                            </div>
+                            <div class="flow-content">
+                                <h2>Roteamento automático</h2>
+                                <p>
+                                    O algoritmo escolhe o nó com maior ângulo de
+                                    elevação e envia via satélite LEO.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flow-item">
+                            <div class="flow-num">03</div>
+                            <div class="flow-connector">
+                                <div class="flow-line"></div>
+                            </div>
+                            <div class="flow-content">
+                                <h2>Central recebe o alerta</h2>
+                                <p>
+                                    Dashboard exibe localização, tipo de evento
+                                    e criticidade em tempo real.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flow-item">
+                            <div class="flow-num">04</div>
+                            <div class="flow-connector"></div>
+                            <div class="flow-content">
+                                <h2>Equipe acionada</h2>
+                                <p>
+                                    Defesa Civil recebe notificação e despacha
+                                    resgate com coordenadas precisas.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <h1>
+                        <span style="color: var(--primary-color)">Link</span
+                        >Edge
+                    </h1>
+                    <p>Rede Mesh Satelital de Emergência</p>
+                    <p>
+                        Global Solution 2026 · FIAP · Engenharia de Software ·
+                        1º Semestre
+                    </p>
+                </div>
+                <div class="footer-team">
+                    <p class="footer-team__label">Equipe</p>
+                    <ul>
+                        <li>KAIO · RM 569127</li>
+                        <li>LEONARDO · RM 571092</li>
+                        <li>MATHEUS · RM 569844</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 LinkEdge · FIAP · Engenharia de Software</p>
+            </div>
+        </footer>
+
+        <script src="./src/js/script.js"></script>
+    </body>
 </html>
