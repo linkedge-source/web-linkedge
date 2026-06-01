@@ -113,10 +113,7 @@ function carregarPergunta() {
 }
 
 window.responder = function (opcaoEscolhida) {
-  if (opcaoEscolhida === perguntas[indice].c) {
-    acertos++;
-  }
-
+  if (opcaoEscolhida === perguntas[indice].c) acertos++;
   indice++;
 
   if (indice < perguntas.length) {
@@ -126,9 +123,15 @@ window.responder = function (opcaoEscolhida) {
       <div style="text-align: center; padding: 40px;">
         <h1>Quiz Finalizado!</h1>
         <p style="font-size: 24px;">Você acertou ${acertos} de ${perguntas.length} questões.</p>
-        <button class="botao-p" onclick="location.reload()">Reiniciar Quiz</button>
+        <button class="botao-p" onclick="reiniciarQuiz()">Reiniciar Quiz</button>
       </div>`;
   }
+};
+
+window.reiniciarQuiz = function () {
+  indice = 0;
+  acertos = 0;
+  carregarPergunta();
 };
 
 quizButton.addEventListener("click", () => {
@@ -141,22 +144,30 @@ quizButton.addEventListener("click", () => {
   const colorBtns = document.querySelectorAll(".color-btn");
   const root = document.documentElement;
 
+  function aplicarCor(color) {
+    root.style.setProperty("--primary-color", color);
+    const hex = color.replace("#", "");
+    const r = parseInt(hex.slice(0, 2), 16);
+    const g = parseInt(hex.slice(2, 4), 16);
+    const b = parseInt(hex.slice(4, 6), 16);
+    root.style.setProperty("--secondary-color", `rgba(${r}, ${g}, ${b}, 0.25)`);
+    root.style.setProperty("--helper", `rgba(${r}, ${g}, ${b}, 0.5)`);
+    root.style.setProperty("--bi-hover", `rgba(${r}, ${g}, ${b}, 0.08)`);
+  }
+
+  const corSalva = localStorage.getItem("primaryColor");
+  if (corSalva) {
+    aplicarCor(corSalva);
+    colorBtns.forEach((btn) => {
+      btn.classList.toggle("active", btn.dataset.color === corSalva);
+    });
+  }
+
   colorBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
       const color = btn.dataset.color;
-      root.style.setProperty("--primary-color", color);
-
-      const hex = color.replace("#", "");
-      const r = parseInt(hex.slice(0, 2), 16);
-      const g = parseInt(hex.slice(2, 4), 16);
-      const b = parseInt(hex.slice(4, 6), 16);
-      root.style.setProperty(
-        "--secondary-color",
-        `rgba(${r}, ${g}, ${b}, 0.25)`,
-      );
-      root.style.setProperty("--helper", `rgba(${r}, ${g}, ${b}, 0.5)`);
-      root.style.setProperty("--bi-hover", `rgba(${r}, ${g}, ${b}, 0.08)`);
-
+      aplicarCor(color);
+      localStorage.setItem("primaryColor", color);
       colorBtns.forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
     });
@@ -165,7 +176,7 @@ quizButton.addEventListener("click", () => {
 
 (function () {
   const slides = document.querySelectorAll(".slide");
-  const icone = document.querySelectorAll(".slideshow-dot");
+  const dots = document.querySelectorAll(".slideshow-dot");
   const btnAnt = document.querySelector(".slideshow-btn--ant");
   const btnProx = document.querySelector(".slideshow-btn--prox");
   let atual = 0;
@@ -173,10 +184,10 @@ quizButton.addEventListener("click", () => {
 
   function goTo(index) {
     slides[atual].classList.remove("active");
-    icone[atual].classList.remove("active");
+    dots[atual].classList.remove("active");
     atual = (index + slides.length) % slides.length;
     slides[atual].classList.add("active");
-    icone[atual].classList.add("active");
+    dots[atual].classList.add("active");
   }
 
   function next() {
@@ -189,7 +200,6 @@ quizButton.addEventListener("click", () => {
   function startAuto() {
     timer = setInterval(next, 5000);
   }
-
   function resetAuto() {
     clearInterval(timer);
     startAuto();
@@ -204,9 +214,9 @@ quizButton.addEventListener("click", () => {
     resetAuto();
   });
 
-  icone.forEach((ponto) => {
-    ponto.addEventListener("click", () => {
-      goTo(Number(ponto.dataset.index));
+  dots.forEach((dot) => {
+    dot.addEventListener("click", () => {
+      goTo(Number(dot.dataset.index));
       resetAuto();
     });
   });
