@@ -141,3 +141,14 @@ Resultado: function startAuto() {
 })();
 
 ---
+
+Prompt: No meu script.js eu tenho um sistema de quiz, porém, ao clicar "Reiniciar quiz" ele volta a cor normal do site (azul). Como fazer para que não volte a cor primário e continue com a cor que estava salva já pelo usuário?
+
+Resultado: O problema é o location.reload() — ele recarrega a página inteira, perdendo tudo. A solução é salvar a cor no localStorage e restaurá-la no carregamento, e trocar o reload por uma função que reinicia só o quiz.
+Foram duas mudanças:
+1. location.reload() → reiniciarQuiz() Em vez de recarregar a página (o que apaga tudo da memória), agora a função apenas zera indice e acertos e chama carregarPergunta() de novo — a página continua intacta com a cor que estava.
+2. localStorage no color switcher
+
+Ao clicar em uma cor, ela é salva com localStorage.setItem("primaryColor", color)
+Ao carregar a página, o código lê localStorage.getItem("primaryColor") e reaplicar a cor automaticamente, inclusive marcando o botão correto como .active
+Assim, mesmo que o usuário recarregue a página manualmente (F5), a cor escolhida persiste.
