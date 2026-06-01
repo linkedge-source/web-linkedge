@@ -136,3 +136,80 @@ quizButton.addEventListener("click", () => {
   quizMain.style.display = "block";
   carregarPergunta();
 });
+
+(function () {
+  const colorBtns = document.querySelectorAll(".color-btn");
+  const root = document.documentElement;
+
+  colorBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const color = btn.dataset.color;
+      root.style.setProperty("--primary-color", color);
+
+      const hex = color.replace("#", "");
+      const r = parseInt(hex.slice(0, 2), 16);
+      const g = parseInt(hex.slice(2, 4), 16);
+      const b = parseInt(hex.slice(4, 6), 16);
+      root.style.setProperty(
+        "--secondary-color",
+        `rgba(${r}, ${g}, ${b}, 0.25)`,
+      );
+      root.style.setProperty("--helper", `rgba(${r}, ${g}, ${b}, 0.5)`);
+      root.style.setProperty("--bi-hover", `rgba(${r}, ${g}, ${b}, 0.08)`);
+
+      colorBtns.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+    });
+  });
+})();
+
+(function () {
+  const slides = document.querySelectorAll(".slide");
+  const icone = document.querySelectorAll(".slideshow-dot");
+  const btnAnt = document.querySelector(".slideshow-btn--ant");
+  const btnProx = document.querySelector(".slideshow-btn--prox");
+  let atual = 0;
+  let timer;
+
+  function goTo(index) {
+    slides[atual].classList.remove("active");
+    icone[atual].classList.remove("active");
+    atual = (index + slides.length) % slides.length;
+    slides[atual].classList.add("active");
+    icone[atual].classList.add("active");
+  }
+
+  function next() {
+    goTo(atual + 1);
+  }
+  function prev() {
+    goTo(atual - 1);
+  }
+
+  function startAuto() {
+    timer = setInterval(next, 5000);
+  }
+
+  function resetAuto() {
+    clearInterval(timer);
+    startAuto();
+  }
+
+  btnProx.addEventListener("click", () => {
+    next();
+    resetAuto();
+  });
+  btnAnt.addEventListener("click", () => {
+    prev();
+    resetAuto();
+  });
+
+  icone.forEach((ponto) => {
+    ponto.addEventListener("click", () => {
+      goTo(Number(ponto.dataset.index));
+      resetAuto();
+    });
+  });
+
+  startAuto();
+})();
