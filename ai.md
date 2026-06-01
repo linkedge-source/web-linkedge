@@ -108,3 +108,36 @@ container.innerHTML = meuHtml;
 ```
 
 ---
+
+
+Prompt: Como fazer um carrousel de imagens automático.
+
+Resultado: function startAuto() {
+    timer = setInterval(next, 5000);
+  }
+
+  function resetAuto() {
+    clearInterval(timer);
+    startAuto();
+  }
+
+  btnProx.addEventListener("click", () => {
+    next();
+    resetAuto();
+  });
+  btnAnt.addEventListener("click", () => {
+    prev();
+    resetAuto();
+  });
+
+  icone.forEach((dot) => {
+    dot.addEventListener("click", () => {
+      goTo(Number(dot.dataset.index));
+      resetAuto();
+    });
+  });
+
+  startAuto();
+})();
+
+---
