@@ -82,6 +82,79 @@ Responda às questões a seguir para testar seu conhecimento sobre o projeto.
 - [x] Alimenta modelos preditivos para prevenção de desastres futuros
 - [ ] Serve apenas para armazenamento de logs técnicos sem utilidade prática
 
+O que foi adicionado: const perguntas = [
+  {
+    p: "Qual o principal objetivo do LinkEdge?",
+    r: [
+      "Monitorar tráfego",
+      "Conectar áreas isoladas",
+      "Vender satélites",
+      "Criar jogos",
+    ],
+    c: 1,
+  },
+  {
+    p: "O que é uma rede Mesh?",
+    r: [
+      "Rede de fibra",
+      "Conexão estática",
+      "Nós interconectados",
+      "Telefonia fixa",
+    ],
+    c: 2,
+  },
+  {
+    p: "Qual o tempo limite do alerta proposto?",
+    r: ["1 minuto", "5 minutos", "30 segundos", "1 hora"],
+    c: 2,
+  },
+  {
+    p: "Qual o custo alvo por nó IoT?",
+    r: ["R$ 100", "R$ 500", "R$ 1.000", "R$ 5.000"],
+    c: 1,
+  },
+  {
+    p: "Qual o papel do Arduino no projeto?",
+    r: ["Sensor", "Servidor", "Satélite", "Provedor"],
+    c: 0,
+  },
+  {
+    p: "Quem é o público-alvo principal?",
+    r: ["Turistas", "Defesa Civil", "Empresas", "Escolas"],
+    c: 1,
+  },
+  {
+    p: "Qual a tecnologia de comunicação?",
+    r: ["Rádio", "Fibra", "Satelital Mesh", "Wi-Fi"],
+    c: 2,
+  },
+  {
+    p: "O LinkEdge depende de torres?",
+    r: ["Sim", "Não", "Às vezes", "Apenas em cidades"],
+    c: 1,
+  },
+  {
+    p: "Qual é a principal função da trigonometria no algoritmo do LinkEdge?",
+    r: [
+      "Calcular o custo do hardware",
+      "Determinar o tempo de bateria",
+      "Escolher o melhor ângulo de visada para o satélite",
+      "Medir a velocidade do vento",
+    ],
+    c: 2,
+  },
+  {
+    p: "Como o histórico de leituras do LinkEdge contribui para a Defesa Civil?",
+    r: [
+      "Aumenta o custo de operação dos resgates",
+      "Substitui a necessidade de bombeiros em campo",
+      "Alimenta modelos preditivos para prevenção de desastres futuros",
+      "Serve apenas para armazenamento de logs técnicos sem utilidade prática",
+    ],
+    c: 2,
+  },
+];
+
 ---
 
 Prompt: Como inserir HTML dentro do JavaScript.
@@ -106,6 +179,21 @@ let meuHtml = `
 
 container.innerHTML = meuHtml;
 ```
+
+O que foi adicionado: let conteudo = `<h1>${indice + 1} - ${perguntaAtual.p}</h1><div class="flow">`;
+
+  perguntaAtual.r.forEach((texto, i) => {
+    conteudo += `
+        <button type="button" class="flow-item" onclick="responder(${i})">
+            <div class="flow-num">${letras[i]} .</div>
+            <div class="flow-connector"><div class="flow-line"></div></div>
+            <div class="flow-content"><h2>${texto}</h2></div>
+        </button>`;
+  });
+
+  conteudo += `</div>`;
+  quizMain.innerHTML = conteudo;
+}
 
 ---
 
@@ -152,3 +240,23 @@ Foram duas mudanças:
 Ao clicar em uma cor, ela é salva com localStorage.setItem("primaryColor", color)
 Ao carregar a página, o código lê localStorage.getItem("primaryColor") e reaplicar a cor automaticamente, inclusive marcando o botão correto como .active
 Assim, mesmo que o usuário recarregue a página manualmente (F5), a cor escolhida persiste.
+
+O que foi alterado/adicionado: if (indice < perguntas.length) {
+    carregarPergunta();
+  } else {
+    quizMain.innerHTML = `
+      <div style="text-align: center; padding: 40px;">
+        <h1>Quiz Finalizado!</h1>
+        <p style="font-size: 24px;">Você acertou ${acertos} de ${perguntas.length} questões.</p>
+        <button class="botao-p" onclick="reiniciarQuiz()">Reiniciar Quiz</button>
+      </div>`;
+  }
+};
+
+window.reiniciarQuiz = function () {
+  indice = 0;
+  acertos = 0;
+  carregarPergunta();
+};
+
+---
