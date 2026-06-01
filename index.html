@@ -26,11 +26,33 @@
                         <span style="color: var(--primary-color)">Link</span
                         >Edge
                     </h1>
-                    <label for="menu-toggle" class="hamburger">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </label>
+                    <div class="nav-right">
+                        <div class="color-switcher">
+                            <button
+                                class="color-btn active"
+                                data-color="#00bbff"
+                                style="background: #00bbff"
+                                aria-label="Cor azul"
+                            ></button>
+                            <button
+                                class="color-btn"
+                                data-color="#AA2121"
+                                style="background: #aa2121"
+                                aria-label="Cor vermelha"
+                            ></button>
+                            <button
+                                class="color-btn"
+                                data-color="#AA7F21"
+                                style="background: #aa7f21"
+                                aria-label="Cor dourada"
+                            ></button>
+                        </div>
+                        <label for="menu-toggle" class="hamburger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </label>
+                    </div>
                 </nav>
             </header>
 
@@ -609,6 +631,65 @@
                                 Enviar Mensagem
                             </button>
                         </form>
+                    </div>
+                </div>
+            </section>
+
+            <section id="slideshow" class="slideshow">
+                <div class="slideshow-d container">
+                    <div class="slideshow-t">
+                        <div class="slide active">
+                            <img
+                                class="imageslide"
+                                src="./src/assets/imgs/slide1.jpg"
+                                alt="Slide 1"
+                            />
+                        </div>
+                        <div class="slide">
+                            <img
+                                class="imageslide"
+                                src="./src/assets/imgs/slide2.jpg"
+                                alt="Slide 2"
+                            />
+                        </div>
+                        <div class="slide">
+                            <img
+                                class="imageslide"
+                                src="./src/assets/imgs/slide3.jpg"
+                                alt="Slide 3"
+                            />
+                        </div>
+                    </div>
+
+                    <button
+                        class="slideshow-btn slideshow-btn--ant"
+                        aria-label="Slide anterior"
+                    >
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <button
+                        class="slideshow-btn slideshow-btn--prox"
+                        aria-label="Próximo slide"
+                    >
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+
+                    <div class="slideshow-dots">
+                        <button
+                            class="slideshow-dot active"
+                            data-index="0"
+                            aria-label="Ir para slide 1"
+                        ></button>
+                        <button
+                            class="slideshow-dot"
+                            data-index="1"
+                            aria-label="Ir para slide 2"
+                        ></button>
+                        <button
+                            class="slideshow-dot"
+                            data-index="2"
+                            aria-label="Ir para slide 3"
+                        ></button>
                     </div>
                 </div>
             </section>
